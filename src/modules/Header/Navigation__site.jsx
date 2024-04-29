@@ -6,7 +6,7 @@ import {
   Navigation__site__item__button,
   Icon_down_svg,
   Plas__svg,
-} from './navigation_site.styled.js';
+} from './navigation__site.styled.js';
 
 export function NavigationSite() {
   return (

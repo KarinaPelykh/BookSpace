@@ -1,6 +1,6 @@
-import { Container__header, Navigation__nav } from './header.styled';
-import { Navigation } from './Navigation';
-import { NavigationSite } from './Navigation_site';
+import { Container__header, Navigation__nav } from './Header__box.styled.js';
+import { Navigation } from './Navigation.jsx';
+import { NavigationSite } from './Navigation__site.jsx';
 
 export default function Header() {
   return (
