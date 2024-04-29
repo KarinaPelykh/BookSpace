@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const StyledContainer = styled.div`
   margin: auto;
   padding: 0 20px 0 20px;
   border: 3px solid red;
@@ -13,6 +13,6 @@ export const Container = styled.div`
   }
   @media screen and (min-width: 1440px) {
     max-width: 1280px;
-    padding: 0 80px 0 80px;
+    padding: 0 15px 0 15px;
   }
 `;
