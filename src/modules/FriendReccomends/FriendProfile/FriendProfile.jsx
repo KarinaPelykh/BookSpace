@@ -29,7 +29,7 @@ function FriendProfile({ friend }) {
           Відписатися
         </button>
       </FriendProfileContainer>
-      <RecommendedBooksSlider friend={friend.book} />
+      {/* <RecommendedBooksSlider friend={friend.book} /> */}
     </FriendProfileSectionContainer>
   );
 }
