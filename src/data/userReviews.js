@@ -1,6 +1,8 @@
 export const userReviews = [
   {
     user: 'Андрій ',
+    friend_id: 0,
+    avatar: '../images/friend.png',
     reviews: 85,
     critique: 23,
     title:
@@ -18,6 +20,8 @@ export const userReviews = [
   },
   {
     user: 'Андрій ',
+    friend_id: 1,
+    avatar: '../images/friend.png',
     reviews: 85,
     critique: 23,
     title:
@@ -35,6 +39,8 @@ export const userReviews = [
   },
   {
     user: 'Андрій ',
+    friend_id: 2,
+    avatar: '../images/friend.png',
     reviews: 85,
     critique: 23,
     title:
@@ -52,6 +58,8 @@ export const userReviews = [
   },
   {
     user: 'Андрій ',
+    friend_id: 3,
+    avatar: '../images/friend.png',
     reviews: 85,
     critique: 23,
     title:
@@ -69,6 +77,8 @@ export const userReviews = [
   },
   {
     user: 'Андрій ',
+    friend_id: 4,
+    avatar: '../images/friend.png',
     reviews: 85,
     critique: 23,
     title:
@@ -86,6 +96,8 @@ export const userReviews = [
   },
   {
     user: 'Андрій ',
+    friend_id: 5,
+    avatar: '../images/friend.png',
     reviews: 85,
     critique: 23,
     title:
