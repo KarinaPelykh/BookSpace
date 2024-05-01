@@ -1,0 +1,55 @@
+@media screen and (max-width: 1024px) {
+  .swiper {
+    margin-inline: 0;
+    /* margin-bottom: 80px; */
+    margin-top: 24px;
+    border-bottom: 0.5px solid #939695;
+    padding-bottom: 80px !important;
+    & li {
+      margin: 0;
+    }
+  }
+  .swiper-button-next {
+    margin: 25px;
+    margin-right: 65px;
+    margin-left: auto;
+  }
+  .swiper-button-prev {
+    margin: 25px;
+    margin-left: 65px;
+    margin-right: auto;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 16px;
+
+    /* display: none; */
+  }
+  .swiper-button-prev {
+    color: black;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .swiper {
+    margin-bottom: 24px;
+    border: none;
+    width: 100%;
+  }
+  .swiper-pagination {
+    display: none;
+  }
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+.swiper-button-next {
+  color: black;
+}
+.swiper-pagination {
+  bottom: 20% !important;
+  & span {
+    background-color: black;
+  }
+}
