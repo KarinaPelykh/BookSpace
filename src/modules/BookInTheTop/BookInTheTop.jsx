@@ -1,7 +1,7 @@
 import icon from '../../images/sprite.svg';
 import { Button, MainTitle } from './BookInTheTop.styled.js';
 import { ListBooks } from './ListBook/ListBooks.jsx';
-export const BooInTheTop = () => {
+export const BookInTheTop = () => {
   return (
     <>
       <MainTitle>Топ тижня</MainTitle>
