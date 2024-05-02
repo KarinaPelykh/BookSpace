@@ -13,7 +13,12 @@ import {
   Value,
   WrapperSvg,
 } from './Reviews.styled';
+import { useState } from 'react';
 export const Reviews = () => {
+  const [visible, setVisible] = useState(false);
+  const handelVisible = () => {
+    setVisible(!visible);
+  };
   return (
     <>
       <TitleReview>Топ відгуків тижня</TitleReview>
@@ -21,17 +26,18 @@ export const Reviews = () => {
         {userReviews.map(
           ({
             user,
-            images,
+            friend_id,
+            avatar,
             reviews,
             critique,
             title,
             description,
-            book: { id, imagesBook, titleBook, author, rating },
+            book: { id, images, s, author, rating },
           }) => (
-            <Item key={id}>
+            <Item key={friend_id}>
               <User
                 user={user}
-                images={images}
+                images={avatar}
                 reviews={reviews}
                 critique={critique}
               />
@@ -42,8 +48,10 @@ export const Reviews = () => {
                 <Date>3 квітня,2024</Date>
               </Div>
               <Title>&quot;{title}&quot;</Title>
-              <Description>{description}</Description>
-              <ButtonOpen>
+              <Description className={visible ? 'active' : null}>
+                {description}
+              </Description>
+              <ButtonOpen onClick={handelVisible}>
                 Читати повністю
                 <svg width="24px" height="24px">
                   <use xlinkHref={icon + '#icon-down'}></use>

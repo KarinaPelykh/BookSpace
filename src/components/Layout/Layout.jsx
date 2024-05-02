@@ -5,8 +5,6 @@ import FiendReccomends from '../../modules/FriendReccomends/FiendRecommends';
 import { Container } from '../Container/Container';
 import { BooInTheTop } from '../../modules/BookInTheTop/BookInTheTop';
 import { Reviews } from '../../modules/Reviews/Reviews';
-
-// import FiendReccomends from '../../modules/FriendReccomends/FiendReccomends';
 export const Layout = () => {
   return (
     <>

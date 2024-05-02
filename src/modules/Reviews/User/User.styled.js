@@ -8,6 +8,7 @@ export const WrapperUser = styled.div`
 
 export const Images = styled.img`
   margin-bottom: 14px;
+  border-radius: ${({ theme }) => theme.radii.round};
 `;
 
 export const UserName = styled.p`

@@ -1,10 +1,11 @@
 import { Button, Images, Text, UserName, WrapperUser } from './User.styled';
 import PropTypes from 'prop-types';
+import defultImage from '../../../images/friend.png';
 export const User = ({ user, images, reviews, critique }) => {
   return (
     <WrapperUser>
-      <Images src={images} alt="user" />
-      <UserName>{user}</UserName>
+      <Images src={defultImage || images} alt="user" />
+      <UserName>{user}Читає</UserName>
       <Text>{reviews} відгуків</Text>
       <Text>{critique} рецензії</Text>
       <Button>Підписатися</Button>

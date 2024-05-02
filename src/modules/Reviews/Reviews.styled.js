@@ -38,6 +38,11 @@ export const Description = styled.p`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+
+  &.active {
+    overflow: visible;
+    display: block;
+  }
 `;
 
 export const ButtonOpen = styled.button`
