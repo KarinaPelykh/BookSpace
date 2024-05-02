@@ -3,6 +3,7 @@ import Header from '../Header/header';
 import Footer from '../../modules/Footer/Footer';
 import FiendReccomends from '../../modules/FriendReccomends/FiendRecommends';
 
+
 // import FiendReccomends from '../../modules/FriendReccomends/FiendReccomends';
 export const Layout = () => {
   return (
