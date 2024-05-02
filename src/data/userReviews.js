@@ -1,3 +1,5 @@
+// import user from '../images/user.png';
+// import book from '../images/book.jpg';
 export const userReviews = [
   // {
   //   user: 'Андрій ',
