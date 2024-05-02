@@ -8,7 +8,7 @@ import { LastSectionButton } from './FriendRecommends.styled';
 
 function FiendReccomends() {
   return (
-    <StyledContainer style={{ marginTop: '300px', border: 'none' }}>
+    <StyledContainer style={{ border: 'none' }}>
       <MainTitle>Твої друзі рекомендують ці книги</MainTitle>
 
       {userReviews?.map(friend => {
