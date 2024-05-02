@@ -11,7 +11,7 @@ import { theme } from './stylesheet/theme.js';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="/BookSpace">
+      <BrowserRouter >
         <ThemeProvider theme={theme}>
           <App />
           <GlobalStyle />
