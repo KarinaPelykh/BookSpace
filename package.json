@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/KarinaPelykh/BookSpace",
+  "homepage": "https://KarinaPelykh.github.io/BookSpace/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
