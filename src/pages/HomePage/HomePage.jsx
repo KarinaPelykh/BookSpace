@@ -1,7 +1,7 @@
-import { Container } from '../../components/Container/Container';
-import { BookInTheTop } from '../../modules/BookInTheTop/BookInTheTop';
-import FiendReccomends from '../../modules/FriendReccomends/FiendRecommends';
-import { Reviews } from '../../modules/Reviews/Reviews';
+import { Container } from "../../Container/Container";
+import { BookInTheTop } from "../../modules/BookInTheTop/BookInTheTop";
+import FiendReccomends from "../../modules/FriendReccomends/FiendRecommends";
+import { Reviews } from "../../modules/Reviews/Reviews";
 const HomePage = () => {
   return (
     <Container>

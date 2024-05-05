@@ -1,7 +1,7 @@
-import 'modern-normalize';
-import { createGlobalStyle } from 'styled-components';
-import ManropeBold from '../assets/fonts/Manrope-Bold.ttf';
-import ManropeRegular from '../assets/fonts/Manrope-Regular.ttf';
+import "modern-normalize";
+import { createGlobalStyle } from "styled-components";
+import ManropeBold from "../assets/fonts/Manrope-Bold.ttf";
+import ManropeRegular from "../assets/fonts/Manrope-Regular.ttf";
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Manrope-Bold';
@@ -54,5 +54,6 @@ button{
     font:inherit;
     background-color: transparent;
 }
+
 `;
 export default GlobalStyle;

@@ -15,7 +15,6 @@ const RecommendedBooksSlider = ({ friend }) => {
       //   mousewheel={true}
       css-mode="true"
       modules={[Mousewheel, Navigation, Pagination]}
-      
       navigation={true}
       pagination={{
         type: 'bullets',
