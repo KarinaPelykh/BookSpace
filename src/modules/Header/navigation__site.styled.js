@@ -8,11 +8,11 @@ export const Navigation__site__ul = styled.ul`
   gap: 16px;
   background-color: rgba(233, 211, 190, 0.7);
   font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: ${({ theme }) => theme.fontWeight.regular};
+  font-size: ${({ theme }) => theme.fontSize.m};
   line-height: 150%;
   text-align: center;
-  color: #2e3534;
+  color: ${({ theme }) => theme.color.darkGray};
 
   @media screen and (min-width: 1024px) and (max-width: 1439px) {
     position: absolute;
@@ -27,9 +27,9 @@ export const Navigation__site__ul = styled.ul`
     position: absolute;
     justify-content: start;
     padding: 0;
-    left: 290px;
+    left: 280px;
     top: 15px;
-    width: 900px;
+    width: 860px;
   }
 `;
 
