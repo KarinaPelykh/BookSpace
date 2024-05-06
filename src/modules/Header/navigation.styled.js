@@ -26,8 +26,8 @@ export const Search__svg = styled.svg`
 `;
 
 export const Navigation__form = styled.form`
-  display: none;
   position: absolute;
+  top: 90px;
 
   @media screen and (min-width: 1024px) and (max-width: 1439px) {
     display: block;
@@ -47,14 +47,14 @@ export const Navigation__form = styled.form`
 export const Navigation__form__input = styled.input`
   border: 1px solid #141414;
   border-radius: 16px;
+  padding: 2px 16px;
+  width: 330px;
   @media screen and (min-width: 1024px) and (max-width: 1439px) {
-    padding: 2px 16px;
     width: 976px;
     height: 36px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 2px 16px;
     width: 399px;
     height: 36px;
   }

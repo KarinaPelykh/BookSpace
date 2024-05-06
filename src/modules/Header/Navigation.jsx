@@ -16,9 +16,25 @@ import {
   Jingle__svg,
   Navigation__form__button,
 } from './navigation.styled';
-
 export function Navigation() {
+  const [showForm, setshowForm] = useState(true);
   const [inputValue, setInputValue] = useState('');
+
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', e => {
+    if (e.matches) {
+      setshowForm(true);
+    } else {
+      setshowForm(false);
+    }
+  });
+
+  function showFormToggle() {
+    if (showForm === false) {
+      setshowForm(true);
+    } else {
+      setshowForm(false);
+    }
+  }
 
   function handleValueChange(event) {
     setInputValue(event.currentTarget.value.toLowerCase());
@@ -36,29 +52,36 @@ export function Navigation() {
 
   return (
     <Navigation__box>
-      <Search__svg width="16px" height="16px" aria-labelledby="search">
+      <Search__svg
+        width="16px"
+        height="16px"
+        aria-labelledby="search"
+        onClick={showFormToggle}
+      >
         <use href={Icons + '#icon-Search'}></use>
       </Search__svg>
-
-      <Navigation__form onSubmit={handleSubmit}>
-        <Navigation__form__input
-          type="text"
-          value={inputValue}
-          autoComplete="off"
-          autoFocus
-          placeholder="Пошук книги"
-          onChange={handleValueChange}
-        ></Navigation__form__input>
-        <Navigation__form__button type="submit">
-          <Navigation__form__button__svg
-            width="16px"
-            height="16px"
-            aria-labelledby="search"
-          >
-            <use href={Icons + '#icon-Search'}></use>
-          </Navigation__form__button__svg>
-        </Navigation__form__button>
-      </Navigation__form>
+      {showForm && (
+        <Navigation__form onSubmit={handleSubmit}>
+          <Navigation__form__input
+            type="text"
+            value={inputValue}
+            name="search"
+            autoComplete="off"
+            autoFocus
+            placeholder="Пошук книги"
+            onChange={handleValueChange}
+          ></Navigation__form__input>
+          <Navigation__form__button type="submit">
+            <Navigation__form__button__svg
+              width="16px"
+              height="16px"
+              aria-labelledby="search"
+            >
+              <use href={Icons + '#icon-Search'}></use>
+            </Navigation__form__button__svg>
+          </Navigation__form__button>
+        </Navigation__form>
+      )}
 
       <Logo__box>
         {
