@@ -11,6 +11,9 @@ export const Navigation__box = styled.div`
     width: 100%;
     padding: 16px 24px;
   }
+  @media screen and (min-width: 1440px) {
+    padding: 16px 80px;
+  }
 `;
 
 export const Search__svg = styled.svg`
@@ -91,6 +94,7 @@ export const User__tools__ul = styled.ul`
   gap: 14px;
   @media screen and (min-width: 1024px) {
     gap: 42px;
+    margin-bottom: 10px;
   }
 `;
 
