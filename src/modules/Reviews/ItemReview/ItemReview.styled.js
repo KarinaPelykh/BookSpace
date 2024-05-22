@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Div = styled.div`
   display: flex;
@@ -36,8 +36,29 @@ export const Description = styled.p`
     overflow: visible;
     display: block;
   }
-`;
 
+  ${({ $variant }) =>
+    $variant === 'bookPage' &&
+    css`
+      overflow: visible;
+      -webkit-line-clamp: unset;
+
+      @media screen and (min-width: 1440px) {
+        width: 1108px;
+      }
+    `};
+`;
+export const Wrapper = styled.div`
+  margin-top: 20px;
+  ${({ $variant }) =>
+    $variant === 'bookPage' &&
+    css`
+      margin-top: 0px;
+      @media screen and (min-width: 1024px) {
+        margin-top: 5px;
+      }
+    `}
+`;
 export const ButtonOpen = styled.button`
   display: flex;
   margin: 0 auto 0 auto;

@@ -1,12 +1,13 @@
 import { userReviews } from '../../../data/userReviews';
-
+import PropTypes from 'prop-types';
 import { Item } from './ListReview.styled';
 import { ItemReview } from '../ItemReview/ItemReview';
 
-export const ListReview = () => {
+export const ListReview = ({ isShow, limit, variant }) => {
+  const data = limit ? userReviews.slice(limit) : userReviews;
   return (
     <ul>
-      {userReviews.map(
+      {data?.map(
         (
           { user, friend_id, avatar, reviews, critique, title, description },
           index
@@ -21,10 +22,17 @@ export const ListReview = () => {
               critique={critique}
               title={title}
               description={description}
+              isShow={isShow}
+              variant={variant}
             />
           </Item>
         )
       )}
     </ul>
   );
+};
+ListReview.propTypes = {
+  isShow: PropTypes.bool,
+  limit: PropTypes.number,
+  variant: PropTypes.string,
 };

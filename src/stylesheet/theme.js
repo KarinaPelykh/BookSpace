@@ -19,6 +19,7 @@ export const theme = {
     beige: '#E9D3BE',
   },
   fontSize: {
+    lx: '32px',
     l: '24px',
     m: '16px',
     s: '12px',
@@ -32,6 +33,7 @@ export const theme = {
     m: '16px',
     s: '14px',
     xs: '9px',
+    xss: '4px',
     round: '100%',
   },
 };

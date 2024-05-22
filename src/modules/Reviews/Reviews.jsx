@@ -1,18 +1,39 @@
 import icon from '../../images/sprite.svg';
 import { ListReview } from './ListReview/ListReview';
 import { Button, TitleReview } from './Reviews.styled';
-
-export const Reviews = () => {
+import PropTypes from 'prop-types';
+export const Reviews = ({
+  prop,
+  isShow,
+  textButton,
+  limit,
+  setLimit,
+  variant,
+}) => {
   return (
     <>
-      <TitleReview>Топ відгуків тижня</TitleReview>
-      <ListReview />
+      <TitleReview>{prop ? prop : 'Топ відгуків тижня'}</TitleReview>
+      <ListReview
+        isShow={isShow}
+        limit={limit}
+        setLimit={setLimit}
+        variant={variant}
+      />
+
       <Button>
-        Читати більше
+        {textButton ? textButton : ' Читати більше'}
         <svg width="24px" height="24px">
           <use xlinkHref={icon + '#icon-down'}></use>
         </svg>
       </Button>
     </>
   );
+};
+Reviews.propTypes = {
+  prop: PropTypes.string,
+  isShow: PropTypes.bool,
+  textButton: PropTypes.string,
+  limit: PropTypes.number,
+  setLimit: PropTypes.func,
+  variant: PropTypes.string,
 };

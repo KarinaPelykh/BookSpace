@@ -12,6 +12,7 @@ import {
   WrapperSvg,
   Thumb,
   Value,
+  Wrapper,
 } from './ItemReview.styled';
 import { User } from '../User/User';
 export const ItemReview = ({
@@ -22,9 +23,10 @@ export const ItemReview = ({
   title,
   description,
   index,
+  isShow = true,
+  variant,
 }) => {
   const [visibleIndex, setVisibleIndex] = useState(null);
-
   const toggleDescription = index => {
     setVisibleIndex(visibleIndex === index ? null : index);
   };
@@ -47,18 +49,24 @@ export const ItemReview = ({
           </Div>
           <div>
             <Title>&quot;{title}&quot;</Title>
-            <Description className={visibleIndex === index ? 'active' : null}>
+            <Description
+              className={visibleIndex === index ? 'active' : null}
+              $variant={variant}
+            >
               {description}
             </Description>
           </div>
 
-          <div style={{ marginTop: '20px' }}>
-            <ButtonOpen onClick={() => toggleDescription(index)}>
-              Читати повністю
-              <svg width="24px" height="24px">
-                <use xlinkHref={icon + '#icon-down'}></use>
-              </svg>
-            </ButtonOpen>
+          <Wrapper $variant={variant}>
+            {isShow ? (
+              <ButtonOpen onClick={() => toggleDescription(index)}>
+                Читати повністю
+                <svg width="24px" height="24px">
+                  <use xlinkHref={icon + '#icon-down'}></use>
+                </svg>
+              </ButtonOpen>
+            ) : null}
+
             <WrapperSvg>
               <Thumb>
                 <svg width="24px" height="24px">
@@ -70,10 +78,10 @@ export const ItemReview = ({
                 <use xlinkHref={icon + '#icon-dislike'}></use>
               </svg>
             </WrapperSvg>
-          </div>
+          </Wrapper>
         </div>
       </Wrap>
-      <ItemBook />
+      {isShow && <ItemBook />}
     </>
   );
 };
@@ -85,4 +93,6 @@ ItemReview.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   index: PropTypes.number,
+  isShow: PropTypes.bool,
+  variant: PropTypes.string,
 };
