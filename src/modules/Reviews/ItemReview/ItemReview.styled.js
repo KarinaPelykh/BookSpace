@@ -72,6 +72,8 @@ export const ButtonOpen = styled.button`
   @media screen and (min-width: 1024px) {
     margin: 0 auto 0 0;
   }
+
+ 
 `;
 
 export const WrapperSvg = styled.div`

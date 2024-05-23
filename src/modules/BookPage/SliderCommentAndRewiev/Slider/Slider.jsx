@@ -12,7 +12,7 @@ export const ReviewSlider = ({ value }) => {
   return (
     <>
       {value === 'Відгуки' ? (
-        <ListReview limit={3} isShow={false} />
+        <ListReview limit={3} isShow={false} variant="bookPage" />
       ) : (
         <Swiper
           direction="horizontal"

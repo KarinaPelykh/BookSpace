@@ -68,6 +68,15 @@ export const DescriptionAboutAuthor = styled.p`
     font-size: ${({ theme }) => theme.fontSize.m};
     line-height: 1.5;
     width: 1070px;
+
+    &.active {
+      overflow: hidden;
+
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      margin-bottom: 16px;
+    }
   }
 `;
 

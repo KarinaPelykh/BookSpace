@@ -15,7 +15,12 @@ import {
   Section,
   EmptySpan,
 } from './Book.styled';
+import { useState } from 'react';
 export const Book = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handelSetIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <Section>
       <Images src={topBooks[0].images} alt="book" />
@@ -34,7 +39,7 @@ export const Book = () => {
           <Text>5 відгуків</Text>
         </Wrapper>
 
-        <Summary>
+        <Summary className={isOpen ? 'active' : null}>
           Нарнія... країна за дверима шафи, таємне місце, застигле у вічній
           зимі, чарівна країна, що чекає на звільнення. <EmptySpan></EmptySpan>
           Люсі першою розгадує таємницю шафи у таємничому старому будинку
@@ -61,8 +66,8 @@ export const Book = () => {
             <option>Хочу прочитати</option>
           </Select>
         </Div>
-        <ButtonShow>
-          Показати повністю
+        <ButtonShow onClick={handelSetIsOpen}>
+          {isOpen ? 'Згорнути опис книги' : 'Показати повністю'}
           <svg width="24px" height="24px">
             <use xlinkHref={icon + '#icon-down'}></use>
           </svg>

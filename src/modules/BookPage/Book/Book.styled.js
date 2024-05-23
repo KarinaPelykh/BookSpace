@@ -69,6 +69,7 @@ export const Summary = styled.p`
     &.active {
       overflow: visible;
       -webkit-line-clamp: unset;
+      display: block;
     }
   }
 `;

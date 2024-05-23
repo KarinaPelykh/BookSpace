@@ -30,11 +30,11 @@ export const ItemReview = ({
   const toggleDescription = index => {
     setVisibleIndex(visibleIndex === index ? null : index);
   };
-
   return (
     <>
       <Wrap>
         <User
+          variant={variant}
           user={user}
           images={avatar}
           reviews={reviews}

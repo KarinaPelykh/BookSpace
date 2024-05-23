@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import defaultImage from '../../../images/friend.png';
 import icon from '../../../images/sprite.svg';
 import {
@@ -14,6 +15,10 @@ import {
   UserWrapp,
 } from './Author.styled';
 export const Author = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handelSetIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <Section>
       <AboutAuthor>Про автора</AboutAuthor>
@@ -26,7 +31,7 @@ export const Author = () => {
         </UserWrapp>
 
         <div>
-          <DescriptionAboutAuthor>
+          <DescriptionAboutAuthor className={isOpen ? 'active' : null}>
             Клайв Стейплз Льюїс був одним з інтелектуальних гігантів ХХ століття
             і, можливо, одним з найвпливовіших письменників свого часу. Він був
             науковим співробітником і викладачем англійської літератури в
@@ -45,8 +50,8 @@ export const Author = () => {
             Льюїс був одружений з поетесою Джой Девідман.В. Г. Льюїс був його
             старшим братомю
           </DescriptionAboutAuthor>
-          <ButtonShow>
-            Сховати
+          <ButtonShow onClick={handelSetIsOpen}>
+            {isOpen ? 'Показати' : 'Сховати'}
             <svg width="24px" height="24px">
               <use xlinkHref={icon + '#icon-down'}></use>
             </svg>

@@ -24,6 +24,7 @@ export const Item = styled.li`
       margin-left: auto;
       margin-right: auto;
       width: 1058px;
+      max-height: none;
     `}
 `;
 
