@@ -4,9 +4,13 @@ import { Container } from '../../Container/Container';
 import { Author } from './Author/Author';
 import { Book } from './Book/Book';
 import { useState } from 'react';
+import { ReviewAndComment } from './ReviewAndComment/ReviewAndComent/ReviewAndComment';
+import { ReviewSlider } from './SliderCommentAndRewiev/Slider/Slider';
+import { Select } from './Select/Select';
 
 export const BookPage = () => {
   const [limit, setLimit] = useState(2);
+  const [value, setValue] = useState('Відгуки');
   return (
     <Container>
       <section style={{ marginTop: '40px' }}>
@@ -20,6 +24,9 @@ export const BookPage = () => {
           setLimit={setLimit}
           variant="bookPage"
         />
+        <ReviewAndComment />
+        <Select value={value} setValue={setValue} />
+        <ReviewSlider value={value} />
         <div>
           <p>Рекомендації</p>
           <ListBooks />

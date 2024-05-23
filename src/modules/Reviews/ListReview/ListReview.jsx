@@ -1,18 +1,18 @@
 import { userReviews } from '../../../data/userReviews';
 import PropTypes from 'prop-types';
-import { Item } from './ListReview.styled';
+import { Item, List } from './ListReview.styled';
 import { ItemReview } from '../ItemReview/ItemReview';
 
 export const ListReview = ({ isShow, limit, variant }) => {
   const data = limit ? userReviews.slice(limit) : userReviews;
   return (
-    <ul>
+    <List $variant={variant}>
       {data?.map(
         (
           { user, friend_id, avatar, reviews, critique, title, description },
           index
         ) => (
-          <Item key={friend_id}>
+          <Item $variant={variant} key={friend_id}>
             <ItemReview
               index={index}
               user={user}
@@ -28,7 +28,7 @@ export const ListReview = ({ isShow, limit, variant }) => {
           </Item>
         )
       )}
-    </ul>
+    </List>
   );
 };
 ListReview.propTypes = {
