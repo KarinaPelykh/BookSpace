@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  width: 286px;
   margin-bottom: 6px;
 `;
 export const Text = styled.p`

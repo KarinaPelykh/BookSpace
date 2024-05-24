@@ -18,6 +18,7 @@ export const ListBooks = () => {
 
   useEffect(() => {
     let bookArray = [];
+
     if (sizeWindow < 1024) {
       bookArray = topBooks.slice(0, 5);
     } else if (sizeWindow > 1023 && sizeWindow < 1439) {

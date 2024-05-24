@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import './custom.css';
+import './Slider.css';
 import { ListReview } from '../../../Reviews/ListReview/ListReview';
 import PropTypes from 'prop-types';
 export const ReviewSlider = ({ value }) => {

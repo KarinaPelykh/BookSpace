@@ -5,7 +5,7 @@ import Header from '../src/modules/Header/Header__box';
 const SharedLayout = () => {
   return (
     <>
-      <Link to="/about">Adasd</Link>
+      <Link to="/book">Book Page</Link>
       <Header />
 
       <Outlet />

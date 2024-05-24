@@ -15,6 +15,11 @@ export const Item = styled.li`
 
     border-bottom: ${({ theme }) => theme.border.normal};
     border-color: ${({ theme }) => theme.color.green};
+    ${({ $variant }) =>
+      $variant === 'bookPage' &&
+      css`
+        display: block;
+      `}
   }
 
   ${({ $variant }) =>

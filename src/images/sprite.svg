@@ -88,6 +88,14 @@
 <path d="M0.014 29.308c0.002 1.275 1.306 2.134 2.478 1.631l31.030-13.305c1.436-0.616 1.436-2.652 0-3.268l-31.030-13.305c-1.172-0.503-2.477 0.356-2.478 1.631l-0.012 8.193c-0.001 0.892 0.659 1.647 1.543 1.765l11.905 1.587c2.057 0.274 2.057 3.25 0 3.524l-11.905 1.587c-0.884 0.118-1.544 0.873-1.543 1.765l0.012 8.193z"></path>
 </symbol>
 
+
+<symbol id="icon-filter" viewBox="0 0 32 32">
+<path stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M14.667 10.667h12"></path>
+<path stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 21.333h13.333"></path>
+<path stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M9.333 14.667c-2.209 0-4-1.791-4-4s1.791-4 4-4c2.209 0 4 1.791 4 4s-1.791 4-4 4z"></path>
+<path stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 25.333c-2.209 0-4-1.791-4-4s1.791-4 4-4c2.209 0 4 1.791 4 4s-1.791 4-4 4z"></path>
+</symbol>
+
 </defs>
 
 </svg>

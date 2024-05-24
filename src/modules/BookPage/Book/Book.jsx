@@ -14,6 +14,8 @@ import {
   ButtonShow,
   Section,
   EmptySpan,
+  WrapperRating,
+  // WrapperRating,
 } from './Book.styled';
 import { useState } from 'react';
 export const Book = () => {
@@ -34,9 +36,11 @@ export const Book = () => {
             </svg>
             <Span>4,5</Span>
           </div>
-          <Text> 11 оцінок</Text>
-          <Text>5 рецензій</Text>
-          <Text>5 відгуків</Text>
+          <WrapperRating>
+            <Text> 11 оцінок</Text>
+            <Text>5 рецензій</Text>
+            <Text>5 відгуків</Text>
+          </WrapperRating>
         </Wrapper>
 
         <Summary className={isOpen ? 'active' : null}>

@@ -13,6 +13,7 @@ import {
   Thumb,
   Value,
   Wrapper,
+  Svg,
 } from './ItemReview.styled';
 import { User } from '../User/User';
 export const ItemReview = ({
@@ -30,9 +31,10 @@ export const ItemReview = ({
   const toggleDescription = index => {
     setVisibleIndex(visibleIndex === index ? null : index);
   };
+
   return (
     <>
-      <Wrap>
+      <Wrap $variant={variant}>
         <User
           variant={variant}
           user={user}
@@ -58,25 +60,26 @@ export const ItemReview = ({
           </div>
 
           <Wrapper $variant={variant}>
-            {isShow ? (
-              <ButtonOpen onClick={() => toggleDescription(index)}>
-                Читати повністю
-                <svg width="24px" height="24px">
-                  <use xlinkHref={icon + '#icon-down'}></use>
-                </svg>
-              </ButtonOpen>
-            ) : null}
+            <ButtonOpen
+              $variant={variant}
+              onClick={() => toggleDescription(index)}
+            >
+              Читати повністю
+              <Svg width="24px" height="24px">
+                <use xlinkHref={icon + '#icon-down'}></use>
+              </Svg>
+            </ButtonOpen>
 
             <WrapperSvg>
               <Thumb>
-                <svg width="24px" height="24px">
+                <Svg>
                   <use xlinkHref={icon + '#icon-like'}></use>
-                </svg>
+                </Svg>
                 <Value>16</Value>
               </Thumb>
-              <svg width="24px" height="24px">
+              <Svg $variant={variant}>
                 <use xlinkHref={icon + '#icon-dislike'}></use>
-              </svg>
+              </Svg>
             </WrapperSvg>
           </Wrapper>
         </div>

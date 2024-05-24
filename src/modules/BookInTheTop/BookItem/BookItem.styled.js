@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Item = styled.li`
   margin-right: 16px;
+
   @media screen and (min-width: 1024px) {
     width: 122px;
     margin-right: 67px;
@@ -19,6 +20,17 @@ export const Images = styled.img`
 `;
 export const Title = styled.h2`
   display: none;
+  ${({ $variant }) =>
+    $variant === 'slider' &&
+    css`
+      font-weight: ${({ theme }) => theme.fontWeight.regular};
+      font-size: ${({ theme }) => theme.fontSize.m};
+      width: 122px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    `}
   @media screen and (min-width: 1024px) {
     width: 122px;
     white-space: nowrap;
@@ -33,6 +45,13 @@ export const Title = styled.h2`
 `;
 export const Author = styled.p`
   display: none;
+  ${({ $variant }) =>
+    $variant === 'slider' &&
+    css`
+      display: flex;
+      font-weight: ${({ theme }) => theme.fontWeight.regular};
+      font-size: ${({ theme }) => theme.fontSize.s};
+    `}
   @media screen and (min-width: 1024px) {
     display: flex;
     justify-content: center;
@@ -48,6 +67,14 @@ export const Rating = styled.p`
   svg {
     display: none;
   }
+  ${({ $variant }) =>
+    $variant === 'slider' &&
+    css`
+      display: flex;
+      svg {
+        display: flex;
+      }
+    `}
   @media screen and (min-width: 1024px) {
     display: flex;
     font-weight: ${({ theme }) => theme.fontWeight.bold};

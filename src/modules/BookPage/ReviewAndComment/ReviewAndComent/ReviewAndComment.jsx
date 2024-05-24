@@ -8,37 +8,41 @@ import {
   Title,
   Wrapper,
   Text,
+  DivMain,
+  Thumb,
 } from './ReviewAndComment.styled';
 import { RatingSystemList } from '../RatingSystem/RatingSystemList/RatingSystemList';
+import { useState } from 'react';
 export const ReviewAndComment = () => {
+  const [open, setOpen] = useState(false);
+  const handelOpen = () => {
+    setOpen(!open);
+  };
   return (
     <Section>
       <Title>Рецензії та відгуки</Title>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: '24px',
-        }}
-      >
+      <DivMain>
         <Wrapper>
           <div>
-            <RatingItem>
-              <button>
-                <svg width="24px" height="24px">
-                  <use xlinkHref={icon + '#icon-down'}></use>
-                </svg>
-              </button>
-            </RatingItem>
-            <RatingList /> <Text>Поставити рейтинг</Text>
+            <Thumb>
+              <div>
+                <RatingItem>
+                  <button onClick={handelOpen}>
+                    <svg width="24px" height="24px">
+                      <use xlinkHref={icon + '#icon-down'}></use>
+                    </svg>
+                  </button>
+                </RatingItem>
+                {open && <RatingList />} <Text>Поставити рейтинг</Text>
+              </div>
+              <Button>Написати рецензію</Button>
+            </Thumb>
+            <Form />
           </div>
-          <Button>Написати рецензію</Button>
         </Wrapper>
 
         <RatingSystemList />
-      </div>
-      <Form />
+      </DivMain>
     </Section>
   );
 };

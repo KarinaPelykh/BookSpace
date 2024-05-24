@@ -7,7 +7,8 @@ import 'swiper/css/pagination';
 import { BookItem } from '../../BookInTheTop/BookItem/BookItem';
 import defultBookCover from '../../../images/book.jpg';
 import './customslider.css';
-const RecommendedBooksSlider = ({ friend }) => {
+const RecommendedBooksSlider = ({ friend, variant }) => {
+  const amount = variant === 'slider' ? 2.5 : 5;
   return (
     <Swiper
       direction="horizontal"
@@ -23,7 +24,7 @@ const RecommendedBooksSlider = ({ friend }) => {
       }}
       breakpoints={{
         0: {
-          slidesPerView: 5,
+          slidesPerView: amount,
           spaceBetween: 16,
         },
         1024: {
@@ -42,6 +43,7 @@ const RecommendedBooksSlider = ({ friend }) => {
             title={title}
             author={author}
             rating={rating}
+            variant={variant}
           />
         </SwiperSlide>
       ))}
