@@ -151,6 +151,10 @@ export const Wrap = styled.div`
       css`
         width: 100%;
         margin-right: 0px;
+        height: auto;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 12px;
       `}
     ${({ $variant }) =>
       $variant === 'slider' &&

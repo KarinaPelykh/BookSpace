@@ -12,6 +12,8 @@ import {
   EmptySpan,
   Images,
   Section,
+  Span,
+  SpanDot,
   UserWrapp,
 } from './Author.styled';
 export const Author = () => {
@@ -47,8 +49,11 @@ export const Author = () => {
             день книги про Нарнію продані накладом понад 100 мільйонів
             примірників і були екранізовані в трьох великих кінофільмах.
             <EmptySpan></EmptySpan>
-            Льюїс був одружений з поетесою Джой Девідман.В. Г. Льюїс був його
-            старшим братомю
+            <Span>
+              Льюїс був одружений з поетесою Джой Девідман. <br /> В. Г. Льюїс
+              був його старшим братомю
+            </Span>
+            <SpanDot>...</SpanDot>
           </DescriptionAboutAuthor>
           <ButtonShow onClick={handelSetIsOpen}>
             {isOpen ? 'Показати' : 'Сховати'}

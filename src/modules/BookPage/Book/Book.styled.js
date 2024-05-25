@@ -52,6 +52,7 @@ export const Author = styled.p`
   margin-bottom: 16px;
   @media screen and (min-width: 1024px) {
     margin: 0px;
+    margin-bottom: 16px;
     width: auto;
   }
 `;
@@ -116,12 +117,6 @@ export const WrapperRating = styled.div`
   display: flex;
   p {
     margin: 8px 16px 0px 0px;
-  }
-  @media screen and (min-width: 1024px) {
-    display: none;
-    p {
-      margin: 0px;
-    }
   }
 `;
 export const Button = styled.button`

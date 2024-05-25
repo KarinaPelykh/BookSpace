@@ -12,7 +12,9 @@ export const Reviews = ({
 }) => {
   return (
     <>
-      <TitleReview>{prop ? prop : 'Топ відгуків тижня'}</TitleReview>
+      <TitleReview $variant={variant}>
+        {prop ? prop : 'Топ відгуків тижня'}
+      </TitleReview>
       <ListReview
         isShow={isShow}
         limit={limit}

@@ -15,7 +15,6 @@ import {
   Section,
   EmptySpan,
   WrapperRating,
-  // WrapperRating,
 } from './Book.styled';
 import { useState } from 'react';
 export const Book = () => {

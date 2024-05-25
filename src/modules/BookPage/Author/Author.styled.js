@@ -89,7 +89,26 @@ export const DescriptionAboutAuthor = styled.p`
 `;
 
 export const EmptySpan = styled.span`
-  height: 1rem;
+  height: 1em;
+  display: block;
+`;
+
+export const Span = styled.span`
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+  @media screen and (min-width: 1440px) {
+    display: flex;
+  }
+`;
+
+export const SpanDot = styled.span`
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
 `;
 export const ButtonShow = styled.button`
   font-weight: ${({ theme }) => theme.fontWeight.bold};

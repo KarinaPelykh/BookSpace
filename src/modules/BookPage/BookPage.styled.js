@@ -22,6 +22,7 @@ export const WrapperSelect = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 28px;
 `;
 export const Svg = styled.svg`
   width: 24px;
