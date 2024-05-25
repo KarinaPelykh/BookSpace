@@ -12,6 +12,8 @@ import {
   WrapperSvg,
   Thumb,
   Value,
+  Wrapper,
+  Svg,
 } from './ItemReview.styled';
 import { User } from '../User/User';
 export const ItemReview = ({
@@ -22,17 +24,19 @@ export const ItemReview = ({
   title,
   description,
   index,
+  isShow = true,
+  variant,
 }) => {
   const [visibleIndex, setVisibleIndex] = useState(null);
-
   const toggleDescription = index => {
     setVisibleIndex(visibleIndex === index ? null : index);
   };
 
   return (
     <>
-      <Wrap>
+      <Wrap $variant={variant}>
         <User
+          variant={variant}
           user={user}
           images={avatar}
           reviews={reviews}
@@ -47,33 +51,40 @@ export const ItemReview = ({
           </Div>
           <div>
             <Title>&quot;{title}&quot;</Title>
-            <Description className={visibleIndex === index ? 'active' : null}>
+            <Description
+              className={visibleIndex === index ? 'active' : null}
+              $variant={variant}
+            >
               {description}
             </Description>
           </div>
 
-          <div style={{ marginTop: '20px' }}>
-            <ButtonOpen onClick={() => toggleDescription(index)}>
+          <Wrapper $variant={variant}>
+            <ButtonOpen
+              $variant={variant}
+              onClick={() => toggleDescription(index)}
+            >
               Читати повністю
-              <svg width="24px" height="24px">
+              <Svg width="24px" height="24px">
                 <use xlinkHref={icon + '#icon-down'}></use>
-              </svg>
+              </Svg>
             </ButtonOpen>
+
             <WrapperSvg>
               <Thumb>
-                <svg width="24px" height="24px">
+                <Svg>
                   <use xlinkHref={icon + '#icon-like'}></use>
-                </svg>
+                </Svg>
                 <Value>16</Value>
               </Thumb>
-              <svg width="24px" height="24px">
+              <Svg $variant={variant}>
                 <use xlinkHref={icon + '#icon-dislike'}></use>
-              </svg>
+              </Svg>
             </WrapperSvg>
-          </div>
+          </Wrapper>
         </div>
       </Wrap>
-      <ItemBook />
+      {isShow && <ItemBook />}
     </>
   );
 };
@@ -85,4 +96,6 @@ ItemReview.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   index: PropTypes.number,
+  isShow: PropTypes.bool,
+  variant: PropTypes.string,
 };

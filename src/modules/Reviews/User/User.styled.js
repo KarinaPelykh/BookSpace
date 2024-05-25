@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 export const WrapperUser = styled.div`
   display: flex;
   flex-direction: column;
@@ -38,4 +38,13 @@ export const Button = styled.button`
   @media screen and (min-width: 1024px) {
     font-size: ${({ theme }) => theme.fontSize.m};
   }
+
+  ${({ $variant }) =>
+    $variant === 'bookPage' &&
+    css`
+      background-color: transparent;
+      border: ${({ theme }) => theme.border.normal};
+      border-color: ${({ theme }) => theme.color.green};
+      color: ${({ theme }) => theme.color.green};
+    `}
 `;

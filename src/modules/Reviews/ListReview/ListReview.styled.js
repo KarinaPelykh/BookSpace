@@ -1,4 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export const List = styled.ul`
+  ${({ $variant }) =>
+    $variant === 'slider' &&
+    css`
+      display: flex;
+    `}
+`;
 
 export const Item = styled.li`
   margin-bottom: 32px;
@@ -7,7 +15,22 @@ export const Item = styled.li`
 
     border-bottom: ${({ theme }) => theme.border.normal};
     border-color: ${({ theme }) => theme.color.green};
+    ${({ $variant }) =>
+      $variant === 'bookPage' &&
+      css`
+        display: block;
+      `}
   }
+
+  ${({ $variant }) =>
+    $variant === 'slider' &&
+    css`
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      width: 1058px;
+      max-height: none;
+    `}
 `;
 
 export const Div = styled.div`

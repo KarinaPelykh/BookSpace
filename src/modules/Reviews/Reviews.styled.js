@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const TitleReview = styled.h1`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
@@ -11,6 +11,13 @@ export const TitleReview = styled.h1`
   @media screen and (min-width: 1024px) {
     font-size: ${({ theme }) => theme.fontSize.l};
   }
+
+  ${({ $variant }) =>
+    $variant === 'bookPage' &&
+    css`
+      font-weight: ${({ theme }) => theme.fontWeight.bold};
+      font-size: ${({ theme }) => theme.fontSize.l};
+    `}
 `;
 
 export const Button = styled.button`
