@@ -45,7 +45,7 @@ const DatePicker = ({ contents }) => {
 
   return (
     <DatePickerDiv>
-      <h3>{contents}</h3>
+      <p>{contents}</p>
       <DateList>
         <li>
           {' '}

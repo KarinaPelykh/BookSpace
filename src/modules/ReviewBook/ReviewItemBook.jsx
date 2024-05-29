@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import {
   Image,
+  ImageBox,
   ImageList,
   RetingBox,
   RetingButtonSvg,
@@ -19,18 +20,21 @@ export function ReviewItemBook({ book }) {
   };
   return (
     <Section>
-      <Image src={images} alt="book"></Image>
-      <ImageList>
-        <li>
-          Назва:<span>{title}</span>{' '}
-        </li>
-        <li>
-          Автор:<span> {author}</span>
-        </li>
-        <li>
-          Рік виходу:<span> {year}</span>
-        </li>
-      </ImageList>
+      <ImageBox>
+        <Image src={images} alt="book"></Image>
+        <ImageList>
+          <li>
+            Назва:<span>{title}</span>{' '}
+          </li>
+          <li>
+            Автор:<span> {author}</span>
+          </li>
+          <li>
+            Рік виходу:<span> {year}</span>
+          </li>
+        </ImageList>
+      </ImageBox>
+
       <RetingBox>
         <div>
           <span>Моя оцінка:</span>

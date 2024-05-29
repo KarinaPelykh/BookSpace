@@ -23,4 +23,8 @@ export const DatePickerDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  p {
+    margin-top: 24px;
+  }
 `;
