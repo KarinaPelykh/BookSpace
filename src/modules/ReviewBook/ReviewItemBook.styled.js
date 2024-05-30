@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-// @media screen and (min-width: 1024px) {
-//   max-width: 1024px;
-// }
-// @media screen and (min-width: 1440px) {
-//   max-width: 1440px;
-// }
-
 export const Section = styled.div`
   font-family: 'Manrope', sans-serif;
   font-weight: 700;

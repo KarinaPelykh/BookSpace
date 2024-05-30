@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import DatePicker from '../DatePicker/DatePicker';
 import {
   ButtonDiv,
@@ -13,8 +14,60 @@ import {
 } from './ReviewForm.styled';
 
 export function ReviewForm() {
+  const [aboutBook, setAboutBook] = useState('');
+  const [quote, setQuote] = useState('');
+  const [specialNotes, setSpecialNotes] = useState('');
+  const [dateBegine, setDateBegine] = useState({});
+  const [dateEnd, setDateEnd] = useState({});
+  const [showProfile, setShowProfile] = useState(false);
+
+  const handleChange = event => {
+    const { name, value, checked } = event.target;
+    switch (name) {
+      case 'aboutBook':
+        setAboutBook(value);
+        break;
+      case 'quote':
+        setQuote(value);
+        break;
+      case 'specialNotes':
+        setSpecialNotes(value);
+        break;
+      case 'showProfile':
+        setShowProfile(checked);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const dateSubmit = (name, value, contents) => {
+    if (contents === `Дата початку`) {
+      setDateBegine(prev => {
+        return { ...prev, [name]: value };
+      });
+    } else {
+      setDateEnd(prev => {
+        return { ...prev, [name]: value };
+      });
+    }
+  };
+
+  const onSubmit = event => {
+    event.preventDefault();
+    const UserReview = {
+      aboutBook,
+      quote,
+      specialNotes,
+      dateBegine,
+      dateEnd,
+      showProfile,
+    };
+    console.log(UserReview);
+  };
   return (
-    <Form>
+    <Form onSubmit={onSubmit}>
       <LableAbout>
         <h3>Що ви думаєте про книгу?</h3>
         <p>
@@ -24,7 +77,9 @@ export function ReviewForm() {
         <ReviewTextArea
           type="texta"
           name="aboutBook"
+          value={aboutBook}
           placeholder="Введіть текст ревью тут..."
+          onChange={handleChange}
         ></ReviewTextArea>
       </LableAbout>
       <label>
@@ -35,11 +90,15 @@ export function ReviewForm() {
           пункт.
         </p>
         <h3 style={{ marginTop: `18px` }}>Цитата 1:</h3>
-        <QuoteSelect id="quote" name="quote">
-          <option value="Цитата 1"></option>
-          <option value="Цитата 2">Цитата 1</option>
-          <option value="Цитата 3">Цитата 2</option>
-          <option value="Цитата 4">Цитата 3</option>
+        <QuoteSelect
+          id="quote"
+          name="quote"
+          value={quote}
+          onChange={handleChange}
+        >
+          <option value="Цитата 1">Цитата 1</option>
+          <option value="Цитата 2">Цитата 2</option>
+          <option value="Цитата 3">Цитата 3</option>
         </QuoteSelect>
 
         <QuoteButton type="button">Додати ще</QuoteButton>
@@ -52,17 +111,27 @@ export function ReviewForm() {
           ще раз ви можете додати ще одну дату нижче.
         </p>
         <DateDiv>
-          <DatePicker contents={`Дата початку`} />
-          <DatePicker contents={`Дата закінчення`} />
+          <DatePicker contents={`Дата початку`} dateSubmit={dateSubmit} />
+          <DatePicker contents={`Дата закінчення`} dateSubmit={dateSubmit} />
         </DateDiv>
 
         <DateButton type="button">Додати ще одну дату</DateButton>
       </label>
       <label>
         <h3>Особисті нотатки (Їх бачите лише ви)</h3>
-        <NotesTextarea type="texta" name="SpecialNotes"></NotesTextarea>
+        <NotesTextarea
+          type="texta"
+          name="specialNotes"
+          value={specialNotes}
+          onChange={handleChange}
+        ></NotesTextarea>
         <CheckboxLable>
-          <input type="checkbox" name="roolse" value="show" />
+          <input
+            type="checkbox"
+            name="showProfile"
+            value="yes"
+            onChange={handleChange}
+          />
           <span>Показати в профілі</span>
         </CheckboxLable>
       </label>

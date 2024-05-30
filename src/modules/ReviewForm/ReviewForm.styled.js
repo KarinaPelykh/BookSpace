@@ -12,6 +12,10 @@ export const ReviewSection = styled.section`
 export const DateDiv = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    gap: 124px;
+  }
 `;
 
 export const Form = styled.form`
@@ -55,34 +59,18 @@ export const ReviewTextArea = styled.textarea`
   border-radius: 32px;
   padding-left: 32px;
   padding-top: 24px;
-  width: 336px;
+  width: 100%;
   height: 489px;
   resize: both;
   margin-top: 24px;
-
-  @media screen and (min-width: 1024px) and (max-width: 1439px) {
-    width: 976px;
-    height: 436px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 1280px;
-  }
 `;
 
 export const QuoteSelect = styled.select`
   border: 1px solid ${({ theme }) => theme.color.grey};
   border-radius: 16px;
-  width: 337px;
+  width: 100%;
   height: 75px;
   margin-bottom: 16px;
-  @media screen and (min-width: 1024px) and (max-width: 1439px) {
-    width: 976px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 1280px;
-  }
 `;
 export const QuoteButton = styled.button`
   border: 1px solid ${({ theme }) => theme.color.green};
@@ -108,17 +96,9 @@ export const DateButton = styled.button`
 export const NotesTextarea = styled.textarea`
   border: 1px solid ${({ theme }) => theme.color.green};
   border-radius: 16px;
-  width: 335px;
+  width: 100%;
   height: 130px;
   resize: none;
-
-  @media screen and (min-width: 1024px) and (max-width: 1439px) {
-    width: 976px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 1280px;
-  }
 `;
 
 export const CheckboxLable = styled.label`
@@ -147,5 +127,9 @@ export const ButtonDiv = styled.div`
     color: ${({ theme }) => theme.color.white};
     background: ${({ theme }) => theme.background.green};
     margin-top: 16px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-left: auto;
+    margin-top: -50px;
   }
 `;

@@ -1,19 +1,30 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { DateList, DatePickerDiv } from './DatePicker.styled';
-const DatePicker = ({ contents }) => {
-  const [selectedDate, setSelectedDate] = useState({
-    day: '',
-    month: '',
-    year: '',
-  });
+
+const DatePicker = ({ contents, dateSubmit }) => {
+  const [day, setDay] = useState('');
+  const [month, setMonth] = useState('');
+  const [year, setYear] = useState('');
 
   const handleSelect = e => {
     const { name, value } = e.target;
-    setSelectedDate(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
+    switch (name) {
+      case 'day':
+        setDay(value);
+        break;
+      case 'month':
+        setMonth(value);
+        break;
+      case 'year':
+        setYear(value);
+        break;
+
+      default:
+        break;
+    }
+
+    dateSubmit(name, value, contents);
   };
 
   const generateOptions = (start, end) => {
@@ -49,7 +60,7 @@ const DatePicker = ({ contents }) => {
       <DateList>
         <li>
           {' '}
-          <select name="day" value={selectedDate.day} onChange={handleSelect}>
+          <select name="day" value={day} onChange={handleSelect}>
             <option value="" disabled>
               День
             </option>
@@ -58,11 +69,7 @@ const DatePicker = ({ contents }) => {
         </li>
         <li>
           {' '}
-          <select
-            name="month"
-            value={selectedDate.month}
-            onChange={handleSelect}
-          >
+          <select name="month" value={month} onChange={handleSelect}>
             <option value="" disabled>
               Місяць
             </option>
@@ -75,7 +82,7 @@ const DatePicker = ({ contents }) => {
         </li>
         <li>
           {' '}
-          <select name="year" value={selectedDate.year} onChange={handleSelect}>
+          <select name="year" value={year} onChange={handleSelect}>
             <option value="" disabled>
               Рік
             </option>
@@ -91,4 +98,5 @@ export default DatePicker;
 
 DatePicker.propTypes = {
   contents: PropTypes.string,
+  dateSubmit: PropTypes.func,
 };

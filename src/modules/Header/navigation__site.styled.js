@@ -6,7 +6,7 @@ export const Navigation__site__ul = styled.ul`
   align-items: center;
   padding: 8px 23px;
   gap: 16px;
-  background-color: rgba(233, 211, 190, 0.7);
+
   font-family: 'Manrope', sans-serif;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   font-size: ${({ theme }) => theme.fontSize.m};
