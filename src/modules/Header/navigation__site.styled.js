@@ -6,7 +6,7 @@ export const Navigation__site__ul = styled.ul`
   align-items: center;
   padding: 8px 23px;
   gap: 16px;
-  background-color: rgba(233, 211, 190, 0.7);
+
   font-family: 'Manrope', sans-serif;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   font-size: ${({ theme }) => theme.fontSize.m};
@@ -45,7 +45,10 @@ export const Navigation__site__item__button = styled.button`
   align-items: center;
 `;
 
-export const Icon_down_svg = styled.svg``;
+export const Icon_down_svg = styled.svg`
+  fill: rgba(233, 211, 190, 0.7);
+  stroke: black;
+`;
 
 export const Plas__svg = styled.svg`
   fill: #e9d3be;
