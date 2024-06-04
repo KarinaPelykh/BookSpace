@@ -1,6 +1,6 @@
 import { Reviews } from '../../modules/Reviews/Reviews';
 import { ListBooks } from '../../modules/BookInTheTop/ListBook/ListBooks';
-import { Container } from '../../Container/Container';
+import { Container } from '../../components/Container/Container';
 import { Author } from './Author/Author';
 import { Book } from './Book/Book';
 import { useEffect, useState } from 'react';

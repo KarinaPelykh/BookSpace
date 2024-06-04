@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const WindowResizeHook = () => {
+const useWindowResize = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleResize = () => {
@@ -15,8 +15,9 @@ const WindowResizeHook = () => {
     };
   }, []);
   const Mobilewidth = windowWidth < 1024;
-  const NotMobileWidth = windowWidth >= 1024;
-  return { Mobilewidth, NotMobileWidth };
+  const DesktopWidth = windowWidth >= 1439;
+  const TabletWidth = windowWidth >= 1024 && windowWidth < 1439;
+  return { Mobilewidth, TabletWidth, DesktopWidth };
 };
 
-export default WindowResizeHook;
+export default useWindowResize;

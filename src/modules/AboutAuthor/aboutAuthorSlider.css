@@ -1,0 +1,76 @@
+.books-by-author {
+  width: 100%;
+  padding-bottom: 80px;
+  margin-inline: 0;
+  margin-top: 24px;
+
+  & li {
+    margin: 0;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: black;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 16px;
+
+    /* display: none; */
+  }
+
+  @media screen and (max-width: 1023px) {
+    .swiper-button-next {
+      margin: 25px;
+      margin-right: 65px;
+      margin-left: auto;
+    }
+    .swiper-button-prev {
+      margin: 25px;
+      margin-left: 65px;
+      margin-right: auto;
+    }
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 16px;
+    }
+    .swiper-button-prev {
+      color: black;
+    }
+  }
+
+  .swiper-pagination {
+    /* background-color: green; */
+    bottom: 20%;
+    & span {
+      background-color: black;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .swiper-pagination {
+      bottom: 10%;
+    }
+    /* .swiper-button-next,
+    .swiper-button-prev {
+      background-color: red;
+    } */
+    .swiper-button-next {
+      left: 60%;
+      right: auto;
+      top: auto;
+      bottom: 4%;
+    }
+    .swiper-button-prev {
+      right: 60%;
+      left: auto;
+      top: auto;
+      bottom: 4%;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .books-by-author {
+    display: none;
+  }
+}

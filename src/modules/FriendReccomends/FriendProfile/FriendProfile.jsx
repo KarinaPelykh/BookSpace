@@ -4,13 +4,13 @@
 //   FrienProfileInfoContainer,
 //   FriendProfileContainer,
 // } from './FriendProfile.styled';
+import defultImage from '../../../images/friend.png';
 import RecommendedBooksSlider from '../Slider/Slider';
 import {
   FriendProfileContainer,
   FriendProfileSectionContainer,
   FrienProfileInfoContainer,
 } from './FriendProfile.styled';
-import defultImage from '../../../images/friend.png';
 function FriendProfile({ friend }) {
   return (
     <FriendProfileSectionContainer>

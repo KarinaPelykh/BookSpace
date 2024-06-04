@@ -3,6 +3,9 @@
 <symbol id="icon-down" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.56" d="M9.787 13.44l7.040 6.4 7.040-6.4"></path>
 </symbol>
+<symbol id="icon-up" viewBox="0 0 32 32">
+<path d="M18 15L12.5 10L7 15"  stroke-width="2.56"  stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
 
 <symbol id="icon-Search" viewBox="0 0 32 32">
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.56" d="M24.094 14.72c0 4.948-4.012 8.96-8.96 8.96s-8.96-4.012-8.96-8.96c0-4.948 4.012-8.96 8.96-8.96s8.96 4.012 8.96 8.96z"></path>

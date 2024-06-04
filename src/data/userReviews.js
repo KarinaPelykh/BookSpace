@@ -1,3 +1,4 @@
+const book = '../imagesbookImage.png';
 export const userReviews = [
   {
     user: 'Андрій ',
@@ -20,7 +21,7 @@ export const userReviews = [
       },
       {
         id: 1,
-        images: '../images/book.jpg',
+        images: book,
         title: 'Лев, відьма і шафа',
         author: 'К.С. Льюїс',
         rating: '5.2',

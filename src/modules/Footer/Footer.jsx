@@ -2,10 +2,9 @@ import {
   FooterContainer,
   FooterSectionContainer,
   FooterSvgContainer,
-} from "./Footer.styled";
-import icon from "../../images/sprite.svg";
+} from './Footer.styled';
+import icon from '../../images/sprite.svg';
 export default function Footer() {
-  console.log("rendeer footer");
   return (
     <FooterSectionContainer>
       <FooterContainer>
@@ -46,14 +45,14 @@ export default function Footer() {
             <li>
               <a href="#">
                 <svg width="24px" height="24px" alt="facebook-link">
-                  <use xlinkHref={icon + "#icon-Facebook"}></use>
+                  <use xlinkHref={icon + '#icon-Facebook'}></use>
                 </svg>
               </a>
             </li>
             <li>
               <a href="#">
                 <svg width="24px" height="24px" alt="twitter-link">
-                  <use xlinkHref={icon + "#icon-twitter"}></use>
+                  <use xlinkHref={icon + '#icon-twitter'}></use>
                 </svg>
               </a>
             </li>
