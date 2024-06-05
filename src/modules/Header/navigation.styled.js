@@ -6,7 +6,7 @@ export const Navigation__box = styled.div`
   align-items: center;
   padding: 8px 21px;
   border-bottom: 1px solid #f0e1d2;
-  background-color: #e9d3be;
+
   @media screen and (min-width: 1024px) {
     width: 100%;
     padding: 16px 24px;
@@ -27,7 +27,7 @@ export const Search__svg = styled.svg`
 
 export const Navigation__form = styled.form`
   position: absolute;
-  top: 90px;
+  top: 110px;
 
   @media screen and (min-width: 1024px) and (max-width: 1439px) {
     display: block;
