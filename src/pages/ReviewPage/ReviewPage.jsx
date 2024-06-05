@@ -1,6 +1,6 @@
 // import ItemBook from 'modules/ReviewBook/ReviewItemBook';
 import { ReviewItemBook } from '../../modules/ReviewBook/ReviewItemBook';
-import { Container } from '../../Container/Container';
+import { Container } from '../../components/Container/Container';
 import book from '../../images/book.jpg';
 import { ReviewForm } from '../../modules/ReviewForm/ReviewForm';
 import { ReviewSection } from '../../modules/ReviewForm/ReviewForm.styled';
