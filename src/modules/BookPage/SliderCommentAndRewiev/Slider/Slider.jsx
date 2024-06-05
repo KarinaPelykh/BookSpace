@@ -1,11 +1,11 @@
-import { Mousewheel, Pagination, Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import PropTypes from 'prop-types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import './Slider.css';
+import { Mousewheel, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { ListReview } from '../../../Reviews/ListReview/ListReview';
-import PropTypes from 'prop-types';
+import './Slider.css';
 export const ReviewSlider = ({ value }) => {
   const slides = Array.from({ length: 5 }, (_, index) => index + 1);
 

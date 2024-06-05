@@ -6,7 +6,11 @@ const SharedLayout = () => {
   return (
     <>
       <Link to="/book">Book Page</Link>
+
+      <Link to="/author">About Author Page</Link>
+
       <Link to="/review">Review Page</Link>
+
       <Header />
 
       <Outlet />

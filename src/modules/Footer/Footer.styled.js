@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { tablet } from "../../service/breakpoints/breakpoints";
-import { StyledContainer } from "../../Container/Container.styled";
+import styled from 'styled-components';
+import { tablet } from '../../service/breakpoints/breakpoints';
+import { StyledContainer } from '../../components/Container/Container.styled';
 
 export const FooterSectionContainer = styled.footer`
-  background-color: ${(props) => props.theme.background.beige};
+  background-color: ${props => props.theme.background.beige};
 
   padding-block: 24px;
   padding-inline: 0;
@@ -26,7 +26,7 @@ export const FooterContainer = styled(StyledContainer)`
 
   h3 {
     overflow: hidden;
-    color: ${(props) => props.theme.color.black};
+    color: ${props => props.theme.color.black};
 
     margin-bottom: 16px;
     text-overflow: ellipsis;
@@ -42,7 +42,7 @@ export const FooterContainer = styled(StyledContainer)`
   }
 
   a {
-    color: ${(props) => props.theme.color.darkGray};
+    color: ${props => props.theme.color.darkGray};
     cursor: pointer;
     font: inherit;
     font-weight: ${({ theme }) => theme.fontWeight.regular};

@@ -1,5 +1,5 @@
-import icon from '../../../images/sprite.svg';
 import PropTypes from 'prop-types';
+import icon from '../../../images/sprite.svg';
 import { Author, Images, Item, Rating, Title } from './BookItem.styled';
 export const BookItem = ({ id, images, title, author, rating, variant }) => {
   return (

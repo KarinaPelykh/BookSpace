@@ -5,9 +5,14 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import SharedLayout from './Layout';
-import HomePage from './pages/HomePage/HomePage';
 import { BookPage } from './modules/BookPage/BookPage';
+
+import HomePage from './pages/HomePage/HomePage';
+
+import AboutAuthorPage from './pages/AboutAuthor/AboutAuthor';
+
 import ReviewPage from './pages/ReviewPage/ReviewPage';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="review" element={<ReviewPage />} />
       <Route path="login" element={<p>Login</p>} />
       <Route path="about" element={<p>about</p>} />
+      <Route path="author" element={<AboutAuthorPage />} />
       <Route path="*" element={<p>about</p>} />
     </Route>
   )

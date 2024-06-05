@@ -1,9 +1,7 @@
 import { FriendSectionContainer } from './FriendSection.styled';
 
 function FriendSection() {
-    return <FriendSectionContainer>
-      
-  </FriendSectionContainer>;
+  return <FriendSectionContainer></FriendSectionContainer>;
 }
 
 export default FriendSection;
