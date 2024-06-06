@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
   margin: auto;
@@ -8,7 +8,7 @@ export const StyledContainer = styled.div`
     max-width: 335px;
   }
   @media screen and (min-width: 1024px) {
-    max-width: 976px;
+    max-width: 1024px;
     padding: 0 24px 0 24px;
   }
   @media screen and (min-width: 1440px) {
