@@ -15,7 +15,7 @@ import {
 
 export function ReviewForm() {
   const [aboutBook, setAboutBook] = useState('');
-  const [quote, setQuote] = useState('');
+  const [quote, setQuote] = useState([]);
   const [specialNotes, setSpecialNotes] = useState('');
   const [dateBegine, setDateBegine] = useState({});
   const [dateEnd, setDateEnd] = useState({});
@@ -28,7 +28,7 @@ export function ReviewForm() {
         setAboutBook(value);
         break;
       case 'quote':
-        setQuote(value);
+        setQuote(prev => [...prev, value]);
         break;
       case 'specialNotes':
         setSpecialNotes(value);
@@ -90,12 +90,7 @@ export function ReviewForm() {
           пункт.
         </p>
         <h3 style={{ marginTop: `18px` }}>Цитата 1:</h3>
-        <QuoteSelect
-          id="quote"
-          name="quote"
-          value={quote}
-          onChange={handleChange}
-        >
+        <QuoteSelect id="quote" name="quote" onChange={handleChange}>
           <option value="Цитата 1">Цитата 1</option>
           <option value="Цитата 2">Цитата 2</option>
           <option value="Цитата 3">Цитата 3</option>
