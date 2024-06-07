@@ -8,13 +8,13 @@ import { ListReview } from '../../../Reviews/ListReview/ListReview';
 import './Slider.css';
 export const ReviewSlider = ({ value }) => {
   const slides = Array.from({ length: 5 }, (_, index) => index + 1);
-
   return (
     <>
       {value === 'Відгуки' ? (
         <ListReview limit={3} isShow={false} variant="bookPage" />
       ) : (
         <Swiper
+          className="review-autor"
           direction="horizontal"
           loop={true}
           css-mode="true"

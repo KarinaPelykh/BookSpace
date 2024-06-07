@@ -1,31 +1,30 @@
 import { Mousewheel, Navigation, Pagination } from 'swiper/modules';
-// import SwiperCore, { Navigation, Pagination, Mousewheel } from "../build/core";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import defultBookCover from '../../../images/book.jpg';
-import { BookItem } from '../../BookInTheTop/BookItem/BookItem';
-import './customslider.css';
-const RecommendedBooksSlider = ({ friend, variant }) => {
-  // const amount = variant === 'slider' ? 2.5 : 5;
+
+import '../../../modules/BookPage/SliderCommentAndRewiev/SliderBook.css';
+import { BookItem } from 'src/modules/BookInTheTop/BookItem/BookItem';
+const SliderBook = ({ friend, variant }) => {
+  const amount = variant === 'slider' ? 2.5 : 5;
+
   return (
     <Swiper
-      className="friend-recommends-slider"
+      className="slider-book-bookpage"
       direction="horizontal"
       loop={true}
-      //   mousewheel={true}
       css-mode="true"
       modules={[Mousewheel, Navigation, Pagination]}
       navigation={true}
       pagination={{
         type: 'bullets',
         dynamicBullets: true,
-        // el: '.swiper-pagination',
       }}
       breakpoints={{
         0: {
-          slidesPerView: 5,
+          slidesPerView: amount,
           spaceBetween: 16,
         },
         1024: {
@@ -44,7 +43,7 @@ const RecommendedBooksSlider = ({ friend, variant }) => {
             title={title}
             author={author}
             rating={rating}
-            // variant={variant}
+            variant={variant}
           />
         </SwiperSlide>
       ))}
@@ -52,4 +51,4 @@ const RecommendedBooksSlider = ({ friend, variant }) => {
   );
 };
 
-export default RecommendedBooksSlider;
+export default SliderBook;

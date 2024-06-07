@@ -30,6 +30,7 @@ export const Title = styled.h2`
       overflow: hidden;
       text-overflow: ellipsis;
       display: block;
+      margin-bottom: 4px;
     `}
   @media screen and (min-width: 1024px) {
     width: 122px;
@@ -51,6 +52,7 @@ export const Author = styled.p`
       display: flex;
       font-weight: ${({ theme }) => theme.fontWeight.regular};
       font-size: ${({ theme }) => theme.fontSize.s};
+      margin-bottom: 3px;
     `}
   @media screen and (min-width: 1024px) {
     display: flex;
@@ -71,8 +73,11 @@ export const Rating = styled.p`
     $variant === 'slider' &&
     css`
       display: flex;
+      align-items: center;
+
       svg {
         display: flex;
+        margin-right: 5px;
       }
     `}
   @media screen and (min-width: 1024px) {

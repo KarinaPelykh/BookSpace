@@ -5,6 +5,7 @@ export const List = styled.ul`
     $variant === 'slider' &&
     css`
       display: flex;
+      justify-content: center;
     `}
 `;
 
