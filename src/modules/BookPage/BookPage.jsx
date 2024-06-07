@@ -9,9 +9,10 @@ import { ReviewSlider } from './SliderCommentAndRewiev/Slider/Slider';
 import { Select } from './Select/Select';
 import icon from '../../images/sprite.svg';
 import { Div, Svg, WrapperSelect, Title } from './BookPage.styled';
-import RecommendedBooksSlider from '../../modules/FriendReccomends/Slider/Slider';
+// import RecommendedBooksSlider from '../../modules/FriendReccomends/Slider/Slider';
 import { userReviews } from '../../data/userReviews';
 import { Filter } from './Filter/Filter';
+import SliderBook from '../../modules/BookPage/SliderCommentAndRewiev/SliderBook';
 export const BookPage = () => {
   const [limit, setLimit] = useState(2);
   const [value, setValue] = useState('Відгуки');
@@ -60,7 +61,8 @@ export const BookPage = () => {
         <div>
           <Title>Рекомендації</Title>
           {windowWidth <= 1439 ? (
-            <RecommendedBooksSlider friend={books} variant="slider" />
+            // <RecommendedBooksSlider friend={books} variant="slider" />
+            <SliderBook friend={books} variant="slider" />
           ) : (
             <ListBooks />
           )}

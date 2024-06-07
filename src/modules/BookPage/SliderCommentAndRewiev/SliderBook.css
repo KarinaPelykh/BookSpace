@@ -1,0 +1,58 @@
+.slider-book-bookpage {
+  width: 100%;
+  padding-bottom: 80px;
+  margin-inline: 0;
+  margin-top: 24px;
+  border-bottom: 0.5px solid #939695;
+  & li {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .swiper-button-next {
+      margin: 40px;
+      margin-right: 65px;
+      margin-left: auto;
+    }
+    .swiper-button-prev {
+      margin: 40px;
+      margin-left: 65px;
+      margin-right: auto;
+    }
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 16px;
+    }
+    .swiper-button-prev {
+      color: black;
+    }
+  }
+  .swiper-button-prev {
+    color: black;
+  }
+  .swiper-button-next {
+    color: black;
+  }
+  .swiper-pagination {
+    bottom: 20% !important;
+    & span {
+      background-color: black;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .swiper {
+      margin-bottom: 24px;
+      border: none;
+      width: 100%;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
+  }
+}

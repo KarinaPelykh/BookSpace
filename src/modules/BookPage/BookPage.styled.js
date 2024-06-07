@@ -12,10 +12,14 @@ export const Div = styled.div`
 `;
 
 export const Title = styled.p`
-  font-weight: ${({ theme }) => theme.fontWeight.bold};
-  font-size: ${({ theme }) => theme.fontSize.l};
-  line-height: 1.3;
-  margin-bottom: 40px;
+  display: none;
+  @media screen and (min-width: 1440px) {
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
+    font-size: ${({ theme }) => theme.fontSize.l};
+    line-height: 1.3;
+    margin-bottom: 40px;
+    display: flex;
+  }
 `;
 
 export const WrapperSelect = styled.div`
