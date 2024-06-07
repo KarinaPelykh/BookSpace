@@ -39,20 +39,20 @@ const DatePicker = ({ contents, dateSubmit }) => {
     return options;
   };
 
-  const monthNames = [
-    'Січень',
-    'Лютий',
-    'Березень',
-    'Квітень',
-    'Травень',
-    'Червень',
-    'Липень',
-    'Серпень',
-    'Вересень',
-    'Жовтень',
-    'Листопад',
-    'Грудень',
-  ];
+  // const monthNames = [
+  //   'Січень',
+  //   'Лютий',
+  //   'Березень',
+  //   'Квітень',
+  //   'Травень',
+  //   'Червень',
+  //   'Липень',
+  //   'Серпень',
+  //   'Вересень',
+  //   'Жовтень',
+  //   'Листопад',
+  //   'Грудень',
+  // ];
 
   return (
     <DatePickerDiv>
@@ -73,11 +73,12 @@ const DatePicker = ({ contents, dateSubmit }) => {
             <option value="" disabled>
               Місяць
             </option>
-            {monthNames.map((month, index) => (
+            {generateOptions(1, 12)}
+            {/* {monthNames.map((month, index) => (
               <option key={index} value={month}>
                 {month}
               </option>
-            ))}
+            ))} */}
           </select>
         </li>
         <li>

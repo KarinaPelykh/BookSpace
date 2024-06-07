@@ -1,7 +1,6 @@
 import {
   Date,
   Div,
-  Description,
   ButtonOpen,
   WrapperSvg,
   Thumb,
@@ -10,23 +9,26 @@ import {
   Svg,
 } from '../Reviews/ItemReview/ItemReview.styled';
 import icon from '../../images/sprite.svg';
-import { DateUl, DescriptionDiv, QuoteUl } from './DescriptionPreview.styled';
+import {
+  DateUl,
+  DescriptionDiv,
+  DescriptionText,
+  QuoteUl,
+} from './DescriptionPreview.styled';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export const DescriptionPreview = ({
   description,
-  index,
-  variant,
   quote,
   dateBegine,
   dateEnd,
 }) => {
-  const [visibleIndex, setVisibleIndex] = useState(null);
-  const toggleDescription = index => {
-    setVisibleIndex(visibleIndex === index ? null : index);
+  const [isOpen, setIsOpen] = useState(false);
+  const handelSetIsOpen = () => {
+    setIsOpen(!isOpen);
   };
-
+  console.log(description);
   return (
     <DescriptionDiv>
       <Div>
@@ -36,12 +38,9 @@ export const DescriptionPreview = ({
         <Date>3 квітня,2024</Date>
       </Div>
       <div>
-        <Description
-          className={visibleIndex === index ? 'active' : null}
-          $variant={variant}
-        >
+        <DescriptionText className={isOpen ? 'active' : null}>
           {description}
-        </Description>
+        </DescriptionText>
         <QuoteUl>
           {quote.map((el, index) => {
             return (
@@ -54,25 +53,31 @@ export const DescriptionPreview = ({
         <DateUl>
           <li>
             <p>
-              Дата початку читання:{dateBegine.day}.{dateBegine.month}.
-              {dateBegine.year}
+              <span>Дата початку читання:</span> {dateBegine.day}.
+              {dateBegine.month}.{dateBegine.year}
             </p>
           </li>
           <li>
             <p>
-              Дата закінчення читання:{dateEnd.day}.{dateEnd.month}.
-              {dateEnd.year}
+              <span>Дата закінчення читання:</span> {dateEnd.day}.
+              {dateEnd.month}.{dateEnd.year}
             </p>
           </li>
         </DateUl>
       </div>
 
-      <Wrapper $variant={variant}>
-        <ButtonOpen $variant={variant} onClick={() => toggleDescription(index)}>
-          Читати повністю
-          <Svg width="24px" height="24px">
-            <use xlinkHref={icon + '#icon-down'}></use>
-          </Svg>
+      <Wrapper>
+        <ButtonOpen onClick={handelSetIsOpen}>
+          {isOpen ? 'Згорнути рецензію' : 'Показати повністю'}
+          {isOpen ? (
+            <Svg width="24px" height="24px">
+              <use xlinkHref={icon + '#icon-up'}></use>
+            </Svg>
+          ) : (
+            <Svg width="24px" height="24px">
+              <use xlinkHref={icon + '#icon-down'}></use>
+            </Svg>
+          )}
         </ButtonOpen>
 
         <WrapperSvg>
@@ -82,7 +87,7 @@ export const DescriptionPreview = ({
             </Svg>
             <Value>16</Value>
           </Thumb>
-          <Svg $variant={variant}>
+          <Svg>
             <use xlinkHref={icon + '#icon-dislike'}></use>
           </Svg>
         </WrapperSvg>
