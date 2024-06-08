@@ -4,9 +4,13 @@ export const ReviewSection = styled.section`
   padding-top: 32px;
   padding-bottom: 80px;
 
-  @media screen and (min-width: 1024px) {
-    padding-top: 140px;
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    padding-top: 82px;
     padding-bottom: 172px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-top: 40px;
+    padding-bottom: 150px;
   }
 `;
 export const DateDiv = styled.div`
@@ -59,6 +63,7 @@ export const ReviewTextArea = styled.textarea`
   border-radius: 32px;
   padding-left: 32px;
   padding-top: 24px;
+  padding-right: 10px;
   width: 100%;
   height: 489px;
   resize: both;
@@ -70,14 +75,14 @@ export const QuoteSelect = styled.select`
   border-radius: 16px;
   width: 100%;
   height: 75px;
+  padding-left: 20px;
   margin-bottom: 16px;
 `;
 export const QuoteButton = styled.button`
   border: 1px solid ${({ theme }) => theme.color.green};
   border-radius: 14px;
   padding: 10px 14px;
-  width: 110px;
-  height: 44px;
+
   color: ${({ theme }) => theme.color.green};
   line-height: 1.5;
 `;
@@ -86,8 +91,7 @@ export const DateButton = styled.button`
   border: 1px solid ${({ theme }) => theme.color.green};
   border-radius: 14px;
   padding: 10px 14px;
-  width: 189px;
-  height: 44px;
+
   line-height: 1.5;
 
   color: ${({ theme }) => theme.color.green};
@@ -98,6 +102,8 @@ export const NotesTextarea = styled.textarea`
   border-radius: 16px;
   width: 100%;
   height: 130px;
+  padding-left: 32px;
+  padding-top: 24px;
   resize: none;
 `;
 
@@ -115,21 +121,22 @@ export const CheckboxLable = styled.label`
 `;
 
 export const ButtonDiv = styled.div`
-  a {
+  button {
     font-weight: 700;
   }
 
-  button {
-    border-radius: 14px;
-    padding: 10px 14px;
-    width: 131px;
-    height: 44px;
-    color: ${({ theme }) => theme.color.white};
-    background: ${({ theme }) => theme.background.green};
-    margin-top: 16px;
-  }
   @media screen and (min-width: 1024px) {
     margin-left: auto;
     margin-top: -50px;
   }
+`;
+
+export const PublickButton = styled.button`
+  border-radius: 14px;
+  padding: 10px 14px;
+  width: 131px;
+  height: 44px;
+  color: ${({ theme }) => theme.color.white};
+  background: ${({ theme }) => theme.background.green};
+  margin-top: 16px;
 `;

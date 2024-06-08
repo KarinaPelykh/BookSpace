@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Navigation__site__ul = styled.ul`
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   padding: 8px 23px;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DatePicker from '../DatePicker/DatePicker';
+import PropTypes from 'prop-types';
 import {
   ButtonDiv,
   CheckboxLable,
@@ -8,13 +9,14 @@ import {
   Form,
   LableAbout,
   NotesTextarea,
+  PublickButton,
   QuoteButton,
   QuoteSelect,
   ReviewTextArea,
 } from './ReviewForm.styled';
 
-export function ReviewForm() {
-  const [aboutBook, setAboutBook] = useState('');
+export function ReviewForm({ previewForm }) {
+  const [description, setDescription] = useState('');
   const [quote, setQuote] = useState([]);
   const [specialNotes, setSpecialNotes] = useState('');
   const [dateBegine, setDateBegine] = useState({});
@@ -25,7 +27,7 @@ export function ReviewForm() {
     const { name, value, checked } = event.target;
     switch (name) {
       case 'aboutBook':
-        setAboutBook(value);
+        setDescription(value);
         break;
       case 'quote':
         setQuote(prev => [...prev, value]);
@@ -57,7 +59,7 @@ export function ReviewForm() {
   const onSubmit = event => {
     event.preventDefault();
     const UserReview = {
-      aboutBook,
+      description,
       quote,
       specialNotes,
       dateBegine,
@@ -65,6 +67,7 @@ export function ReviewForm() {
       showProfile,
     };
     console.log(UserReview);
+    previewForm(UserReview);
   };
   return (
     <Form onSubmit={onSubmit}>
@@ -77,8 +80,10 @@ export function ReviewForm() {
         <ReviewTextArea
           type="texta"
           name="aboutBook"
-          value={aboutBook}
+          value={description}
           placeholder="Введіть текст ревью тут..."
+          minLength="150"
+          required
           onChange={handleChange}
         ></ReviewTextArea>
       </LableAbout>
@@ -91,6 +96,7 @@ export function ReviewForm() {
         </p>
         <h3 style={{ marginTop: `18px` }}>Цитата 1:</h3>
         <QuoteSelect id="quote" name="quote" onChange={handleChange}>
+          <option></option>
           <option value="Цитата 1">Цитата 1</option>
           <option value="Цитата 2">Цитата 2</option>
           <option value="Цитата 3">Цитата 3</option>
@@ -132,12 +138,14 @@ export function ReviewForm() {
       </label>
 
       <ButtonDiv>
-        <a href="" aria-label="show review">
-          Передперегляд
-        </a>
+        <button type="submit">Передперегляд</button>
 
-        <button type="submit">Опублікувати</button>
+        <PublickButton>Опублікувати</PublickButton>
       </ButtonDiv>
     </Form>
   );
 }
+
+ReviewForm.propTypes = {
+  previewForm: PropTypes.func,
+};

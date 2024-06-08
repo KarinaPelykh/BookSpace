@@ -38,4 +38,26 @@ export const DateUl = styled.ul`
   font-size: ${({ theme }) => theme.fontSize.m};
   line-height: 1.5;
   color: ${({ theme }) => theme.color.darkGray};
+
+  span {
+    margin-right: 3px;
+  }
+`;
+
+export const DescriptionText = styled.div`
+  font-weight: ${({ theme }) => theme.fontWeight.regular};
+  font-size: ${({ theme }) => theme.fontSize.m};
+  color: ${({ theme }) => theme.color.darkGray};
+  margin-bottom: 4px;
+  line-height: 150%;
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+  &.active {
+    overflow: visible;
+    display: block;
+  }
 `;
